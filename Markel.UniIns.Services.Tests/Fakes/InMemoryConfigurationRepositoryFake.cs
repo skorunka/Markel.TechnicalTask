@@ -1,8 +1,9 @@
+// ReSharper disable InconsistentNaming
 namespace Markel.UniIns.Services.Tests.Fakes
 {
 	using System.Collections.Generic;
 
-	public class InMemoryConfigurationRepository : IConfigurationRepository
+	public class InMemoryConfigurationRepositoryFake : IConfigurationRepository
 	{
 		private static readonly IDictionary<VehicleType, decimal> _vehicleTypeBasePremiums = new Dictionary<VehicleType, decimal>
 		{

@@ -28,6 +28,11 @@ namespace Markel.UniIns.Services.Implementations
 
 		public decimal GetInsuranceFactor(string vehicleManufacturer)
 		{
+			if (!this._configurationRepository.CarManufacturerFactors.ContainsKey(vehicleManufacturer))
+			{
+				throw new ArgumentException(nameof(vehicleManufacturer));
+			}
+
 			return this._configurationRepository.CarManufacturerFactors[vehicleManufacturer.ToLower()];
 		}
 	}

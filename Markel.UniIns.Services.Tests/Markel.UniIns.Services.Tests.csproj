@@ -58,7 +58,7 @@
     <Compile Include="..\_shared\SharedAssemblyInfo.cs">
       <Link>Properties\SharedAssemblyInfo.cs</Link>
     </Compile>
-    <Compile Include="Fakes\InMemoryConfigurationRepository.cs" />
+    <Compile Include="Fakes\InMemoryConfigurationRepositoryFake.cs" />
     <Compile Include="InsuranceRatingServiceUnitTests.cs" />
     <Compile Include="ConfigurationgServiceUnitTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
