@@ -3,7 +3,7 @@ namespace Markel.UniIns.Services.Tests.Fakes
 {
 	using System.Collections.Generic;
 
-	public class InMemoryConfigurationRepositoryFake : IConfigurationRepository
+	public class ConfigurationStorageFake : IConfigurationStorage
 	{
 		private static readonly IDictionary<VehicleType, decimal> _vehicleTypeBasePremiums = new Dictionary<VehicleType, decimal>
 		{

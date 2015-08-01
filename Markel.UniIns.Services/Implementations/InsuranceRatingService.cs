@@ -18,10 +18,10 @@ namespace Markel.UniIns.Services.Implementations
 
 		public decimal GetInsuranceRate(VehicleType vehicleType, string vehicleManufacturer)
 		{
-			var basePremium = this._configurationgService.GetInsuranceBasePremium(vehicleType);
-			var factor = this._configurationgService.GetInsuranceFactor(vehicleManufacturer);
+			var basePremiumForVehicleType = this._configurationgService.GetInsuranceBasePremium(vehicleType);
+			var factorForVehicleManufacturer = this._configurationgService.GetInsuranceFactor(vehicleManufacturer);
 
-			return basePremium * factor;
+			return basePremiumForVehicleType * factorForVehicleManufacturer;
 		}
 	}
 }

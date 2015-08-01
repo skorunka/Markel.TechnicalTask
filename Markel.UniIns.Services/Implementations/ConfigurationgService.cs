@@ -4,36 +4,43 @@ namespace Markel.UniIns.Services.Implementations
 
 	public class ConfigurationgService : IConfigurationgService
 	{
-		private readonly IConfigurationRepository _configurationRepository;
+		private readonly IConfigurationStorage _configurationStorage;
 
-		public ConfigurationgService(IConfigurationRepository configurationRepository)
+		public ConfigurationgService(IConfigurationStorage configurationStorage)
 		{
-			if (configurationRepository == null)
+			if (configurationStorage == null)
 			{
-				throw new ArgumentNullException(nameof(configurationRepository));
+				throw new ArgumentNullException(nameof(configurationStorage));
 			}
 
-			this._configurationRepository = configurationRepository;
+			this._configurationStorage = configurationStorage;
 		}
 
 		public decimal GetInsuranceBasePremium(VehicleType vehicleType)
 		{
-			if (!this._configurationRepository.VehicleTypeBasePremiums.ContainsKey(vehicleType))
+			if (!this._configurationStorage.VehicleTypeBasePremiums.ContainsKey(vehicleType))
 			{
 				throw new ArgumentException(nameof(vehicleType));
 			}
 
-			return this._configurationRepository.VehicleTypeBasePremiums[vehicleType];
+			return this._configurationStorage.VehicleTypeBasePremiums[vehicleType];
 		}
 
 		public decimal GetInsuranceFactor(string vehicleManufacturer)
 		{
-			if (!this._configurationRepository.CarManufacturerFactors.ContainsKey(vehicleManufacturer))
+			if (string.IsNullOrWhiteSpace(vehicleManufacturer))
 			{
 				throw new ArgumentException(nameof(vehicleManufacturer));
 			}
 
-			return this._configurationRepository.CarManufacturerFactors[vehicleManufacturer.ToLower()];
+			vehicleManufacturer = vehicleManufacturer.ToLower();
+
+			if (!this._configurationStorage.CarManufacturerFactors.ContainsKey(vehicleManufacturer))
+			{
+				throw new ArgumentException(nameof(vehicleManufacturer));
+			}
+
+			return this._configurationStorage.CarManufacturerFactors[vehicleManufacturer];
 		}
 	}
 }

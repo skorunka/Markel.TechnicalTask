@@ -2,7 +2,7 @@ namespace Markel.UniIns.Services
 {
 	using System.Collections.Generic;
 
-	public interface IConfigurationRepository
+	public interface IConfigurationStorage
 	{
 		IDictionary<VehicleType, decimal> VehicleTypeBasePremiums { get; }
 
