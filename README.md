@@ -2,15 +2,15 @@
 
 Universal Insurance has decided to enter the car insurance market and require a rating engine to quote for business. The initial calculation that Universal want to implement is as follows:
 	
-  Premium = Base premium for vehicle type * Factor for vehicle manufacturer
+	Premium = Base premium for vehicle type * Factor for vehicle manufacturer
 
-  Vehicle Type	Base Premium
-  Car	£800
-  Van	£1000
+	Vehicle Type	Base Premium
+	Car	£800
+	Van	£1000
  
-  Vehicle manufacturer	Factor
-  Audi	1.5
-  Mercedes	2.0
+	Vehicle manufacturer	Factor
+	Audi	1.5
+	Mercedes	2.0
 
 ## Example 1.
 
