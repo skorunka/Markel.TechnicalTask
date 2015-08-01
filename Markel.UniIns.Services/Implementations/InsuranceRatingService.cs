@@ -1,4 +1,4 @@
-namespace Markel.UniIns.Services
+namespace Markel.UniIns.Services.Implementations
 {
 	using System;
 
@@ -19,7 +19,7 @@ namespace Markel.UniIns.Services
 		public decimal? GetInsuranceRate(VehicleType vehicleType, string vehicleManufacturer)
 		{
 			var basePremium = this._configurationgService.GetInsuranceBasePremium(vehicleType);
-			var factor = 1.5m;
+			var factor = this._configurationgService.GetInsuranceFactor(vehicleManufacturer);
 
 			return basePremium * factor;
 		}
