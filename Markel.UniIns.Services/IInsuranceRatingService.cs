@@ -2,6 +2,6 @@ namespace Markel.UniIns.Services
 {
 	public interface IInsuranceRatingService
 	{
-		decimal? GetInsuranceRate(string vehicleType, string venicleManufacturer);
+		decimal? GetInsuranceRate(VehicleType vehicleType, string vehicleManufacturer);
 	}
 }

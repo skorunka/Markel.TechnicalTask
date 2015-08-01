@@ -1,10 +1,27 @@
 namespace Markel.UniIns.Services
 {
+	using System;
+
 	public class InsuranceRatingService : IInsuranceRatingService
 	{
-		public decimal? GetInsuranceRate(string vehicleType, string venicleManufacturer)
+		private readonly IConfigurationgService _configurationgService;
+
+		public InsuranceRatingService(IConfigurationgService configurationgService)
 		{
-			return 10;
+			if (configurationgService == null)
+			{
+				throw new ArgumentNullException(nameof(configurationgService));
+			}
+
+			this._configurationgService = configurationgService;
+		}
+
+		public decimal? GetInsuranceRate(VehicleType vehicleType, string vehicleManufacturer)
+		{
+			var basePremium = this._configurationgService.GetInsuranceBasePremium(vehicleType);
+			var factor = 1.5m;
+
+			return basePremium * factor;
 		}
 	}
 }
