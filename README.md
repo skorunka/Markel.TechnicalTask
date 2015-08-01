@@ -14,13 +14,13 @@ Universal Insurance has decided to enter the car insurance market and require a 
 
 ## Example 1.
 
-  Input: Insurance required for Audi Car
-  Output: Premium = £1200 
+ 	Input: Insurance required for Audi Car
+ 	Output: Premium = £1200 
 
 ## Example 2.
  
-  Input: Mercedes Van 
-  Output: Premium = £2000
+ 	Input: Mercedes Van 
+ 	Output: Premium = £2000
 
 Please write some C# code to implement these requirements for Universal Insurance’s rating engine.
  
